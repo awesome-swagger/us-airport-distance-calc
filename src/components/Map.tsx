@@ -20,8 +20,9 @@ type Props = {
 }
 function Map({ position, setMap }: Props) {
   const { origin, destination } = position;
+  console.log(process.env.REACT_APP_GOOGLE_API_KEY);
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: process.env.GOOGLE_API_KEY || ""
+    googleMapsApiKey: process.env.REACT_APP_GOOGLE_API_KEY || ""
   });
 
   const [activeMarker, setActiveMarker] = useState<string | null>(null);
